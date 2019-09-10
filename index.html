@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>shin的学习笔记</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="shin的学习笔记">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="shin的学习笔记">
+<meta property="og:locale" content="en">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="shin的学习笔记">
+  
+    <link rel="alternate" href="/atom.xml" title="shin的学习笔记" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">shin的学习笔记</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-git入门到精通" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/09/10/git入门到精通/" class="article-date">
+  <time datetime="2019-09-10T00:46:25.136Z" itemprop="datePublished">2019-09-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/10/git入门到精通/">git入门到精通</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="版本控制"><a href="#版本控制" class="headerlink" title="版本控制"></a>版本控制</h2><h3 id="版本控制工具的功能"><a href="#版本控制工具的功能" class="headerlink" title="版本控制工具的功能"></a>版本控制工具的功能</h3><ul>
+<li>协同修改：多人并行工作。</li>
+<li>数据备份：保存当前状态和提交的每一个历史状态。</li>
+<li>版本管理：git采用文件系统快照方式，svn采用增量式管理方式。</li>
+<li>权限控制：针对团队内人员进行权限控制，团队外开发者代码审核控制机制（git独有）。</li>
+<li>历史记录：查看修改记录信息，恢复到任意历史版本状态。</li>
+<li>分支管理：允许多分支同步推进。</li>
+</ul>
+<h3 id="版本控制类型"><a href="#版本控制类型" class="headerlink" title="版本控制类型"></a>版本控制类型</h3><ul>
+<li>集中式版本控制：svn、cvs、vss….</li>
+<li>分布式版本控制：git、mercurial、bazaar、darcs</li>
+</ul>
+<h2 id="git简介"><a href="#git简介" class="headerlink" title="git简介"></a>git简介</h2><h3 id="git历史"><a href="#git历史" class="headerlink" title="git历史"></a>git历史</h3><ul>
+<li>2005年linus用c语言开发了git分布式版本控制系统</li>
+<li>2008年github上线</li>
+</ul>
+<h3 id="git优势"><a href="#git优势" class="headerlink" title="git优势"></a>git优势</h3><ul>
+<li>大部分操作本地完成，不需要联网</li>
+<li>完整性保证</li>
+<li>尽可能添加数据而不是删除或修改数据</li>
+<li>分支操作快捷流畅</li>
+<li>全面兼容linux命令</li>
+</ul>
+<h3 id="git本地结构"><a href="#git本地结构" class="headerlink" title="git本地结构"></a>git本地结构</h3><ul>
+<li>工作区：代码编辑区域</li>
+<li>暂存区：临时存储</li>
+<li>本地库：历史版本</li>
+<li>工作区–&gt;git add–&gt;暂存区–&gt;git commit–&gt;本地库</li>
+</ul>
+<h3 id="git和代码托管中心"><a href="#git和代码托管中心" class="headerlink" title="git和代码托管中心"></a>git和代码托管中心</h3><ul>
+<li>github、码云</li>
+<li>代码托管中心用于维护远程库</li>
+<li>本地库和远程库：团队内部协作和跨团队之间协作</li>
+</ul>
+<h2 id="git命令行操作"><a href="#git命令行操作" class="headerlink" title="git命令行操作"></a>git命令行操作</h2><h3 id="本地库操作"><a href="#本地库操作" class="headerlink" title="本地库操作"></a>本地库操作</h3><ul>
+<li><p>git init：本地库初始化</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">root@kvm02 MINGW64 /d/repo/WeChat</span><br><span class="line"><span class="meta">$</span><span class="bash"> git init</span></span><br><span class="line">Initialized empty Git repository in D:/repo/WeChat/.git/</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设置签名：用于区分不同开发人员身份，包括用户名和email地址，必须配置。</p>
+<ul>
+<li><p>项目/仓库级别：仅项目有效</p>
+</li>
+<li><p>系统用户级别：用户全局有效</p>
+</li>
+<li><p>优先级：项目级别优先于系统用户级别</p>
+</li>
+<li><p>git config ：项目级别</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git config user.name shinsue</span></span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git config user.email ttf345@qq.com</span></span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> cat .git/config</span></span><br><span class="line">[core]</span><br><span class="line">        repositoryformatversion = 0</span><br><span class="line">        filemode = false</span><br><span class="line">        bare = false</span><br><span class="line">        logallrefupdates = true</span><br><span class="line">        symlinks = false</span><br><span class="line">        ignorecase = true</span><br><span class="line">[user]</span><br><span class="line">        name = shinsue</span><br><span class="line">        email = ttf345@qq.com</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>git config –global：系统用户级别</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git config --global user.name shin</span></span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git config --global user.email ttf345@msn.com</span></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> cat ~/.gitconfig</span></span><br><span class="line">[core]</span><br><span class="line">        editor = \"d:\\ VSCode\\Code.exe\" --wait</span><br><span class="line">[user]</span><br><span class="line">        name = shin</span><br><span class="line">        email = ttf345@msn.com</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>git status：查看工作区和暂存区状态</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git status</span></span><br><span class="line">On branch master</span><br><span class="line"></span><br><span class="line">No commits yet</span><br><span class="line"></span><br><span class="line">nothing to commit (create/copy files and use "git add" to track)</span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>git add [file name]：将工作区”新建/修改”添加到暂存区</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> vim goods.txt</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> git status</span></span><br><span class="line">On branch master</span><br><span class="line"></span><br><span class="line">No commits yet</span><br><span class="line"></span><br><span class="line">Untracked files:</span><br><span class="line">  (use "git add &lt;file&gt;..." to include in what will be committed)</span><br><span class="line"></span><br><span class="line">        goods.txt</span><br><span class="line"></span><br><span class="line">nothing added to commit but untracked files present (use "git add" to track)</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> git add goods.txt</span></span><br><span class="line">warning: LF will be replaced by CRLF in goods.txt.</span><br><span class="line">The file will have its original line endings in your working directory</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>git commit -m “commit message” [file name]：将暂存区内容提交到本地库</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 不带参数不指定备注信息会自动打开编辑界面</span></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git commit</span></span><br><span class="line">hint: Waiting for your editor to close the file...</span><br><span class="line">[main 2019-09-04T08:32:06.524Z] update#setState idle</span><br><span class="line">[master (root-commit) 5eb9c6b] 这是第一次提交</span><br><span class="line"> 1 file changed, 2 insertions(+)</span><br><span class="line"> create mode 100644 goods.txt</span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git status</span></span><br><span class="line">On branch master</span><br><span class="line">nothing to commit, working tree clean</span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> vim goods.txt</span></span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git status</span></span><br><span class="line">On branch master</span><br><span class="line">Changes not staged for commit:</span><br><span class="line">  (use "git add &lt;file&gt;..." to update what will be committed)</span><br><span class="line">  (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)</span><br><span class="line"></span><br><span class="line">        modified:   goods.txt</span><br><span class="line"></span><br><span class="line">no changes added to commit (use "git add" and/or "git commit -a")</span><br><span class="line"><span class="meta">#</span><span class="bash"> 直接在命令行中使用-m参数指定备注信息</span></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git commit -m <span class="string">"修改后再次提交"</span></span></span><br><span class="line">On branch master</span><br><span class="line">Changes not staged for commit:</span><br><span class="line">        modified:   goods.txt</span><br><span class="line"></span><br><span class="line">no changes added to commit</span><br><span class="line"><span class="meta">#</span><span class="bash"> 直接使用-a和-m两参数一步提交到本地仓库，需要针对已经被追踪的文件才可以</span></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git commit -am <span class="string">"修改后再次提交"</span></span></span><br><span class="line">warning: LF will be replaced by CRLF in goods.txt.</span><br><span class="line">The file will have its original line endings in your working directory</span><br><span class="line">[master cade2c5] 修改后再次提交</span><br><span class="line"> 1 file changed, 1 insertion(+)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>git log：查看提交日志记录，多屏显示时空格下翻，b上翻页，q退出</p>
+<ul>
+<li>git log –pretty=oneline：一行简要显示</li>
+<li>git log –oneline：一行短HASH值显示</li>
+<li>git reflog：显示版本移动所需步数，HEAD@{移动到当前版本需要的步数}</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">log</span></span></span><br><span class="line">commit 82bf8afd77cfc8f59d52d6bb6a1a362224dc4f12 (HEAD -&gt; master)</span><br><span class="line">Author: shinsue &lt;ttf345@qq.com&gt;</span><br><span class="line">Date:   Wed Sep 4 18:59:28 2019 +0800</span><br><span class="line"></span><br><span class="line">    jjjj</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">log</span> --pretty=oneline</span></span><br><span class="line">82bf8afd77cfc8f59d52d6bb6a1a362224dc4f12 (HEAD -&gt; master) jjjj</span><br><span class="line">76529622e73c91ab83b7775ab9e13067c354e343 kkkk</span><br><span class="line">c06947542be102a2514e81b930df68b28aaa0e01 iiii</span><br><span class="line">ac91193d36699439af2004b5ec3d7b596bf0dbe4 hhhh</span><br><span class="line">dc7d3f00eaea77f6a0ab04c89e8fec1ed17d15b2 gggg</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">log</span> --oneline</span></span><br><span class="line">82bf8af (HEAD -&gt; master) jjjj</span><br><span class="line">7652962 kkkk</span><br><span class="line">c069475 iiii</span><br><span class="line">ac91193 hhhh</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> git reflog</span></span><br><span class="line">82bf8af (HEAD -&gt; master) HEAD@&#123;0&#125;: commit: jjjj</span><br><span class="line">7652962 HEAD@&#123;1&#125;: commit: kkkk</span><br><span class="line">c069475 HEAD@&#123;2&#125;: commit: iiii</span><br><span class="line">ac91193 HEAD@&#123;3&#125;: commit: hhhh</span><br><span class="line">dc7d3f0 HEAD@&#123;4&#125;: commit: gggg</span><br><span class="line">18ef0fe HEAD@&#123;5&#125;: commit: ffff</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>HEAD指针操作：控制版本的前进后退</p>
+<ul>
+<li>基于索引值操作[推荐]：git reset –hard[局部索引值]</li>
+<li>使用^符号：git reset –hard HEAD^^^，只能后退，一个^表示后退一步，n个表示后退n步。</li>
+<li>使用~符号：git reset –hard HEAD~n，表示后退n步。</li>
+<li>git reset命令三个参数<ul>
+<li>soft：仅仅在本地库移动HEAD指针</li>
+<li>mixed：在本地库移动HEAD指针并且重置暂存区</li>
+<li>hard：在本地库移动HEAD指针并重置暂存区和工作区</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 使用索引值移动HEAD指针，可前进后退</span></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git reflog</span></span><br><span class="line">82bf8af (HEAD -&gt; master) HEAD@&#123;0&#125;: commit: jjjj</span><br><span class="line">7652962 HEAD@&#123;1&#125;: commit: kkkk</span><br><span class="line">c069475 HEAD@&#123;2&#125;: commit: iiii</span><br><span class="line">ac91193 HEAD@&#123;3&#125;: commit: hhhh</span><br><span class="line">dc7d3f0 HEAD@&#123;4&#125;: commit: gggg</span><br><span class="line">18ef0fe HEAD@&#123;5&#125;: commit: ffff</span><br><span class="line">40ad731 HEAD@&#123;6&#125;: commit: eeee</span><br><span class="line">e7973aa HEAD@&#123;7&#125;: commit: dddd</span><br><span class="line">5ce0cf7 HEAD@&#123;8&#125;: commit: cccc</span><br><span class="line">119ce0c HEAD@&#123;9&#125;: commit: bbbb</span><br><span class="line">7a3ada7 HEAD@&#123;10&#125;: commit: aaaa</span><br><span class="line">cade2c5 HEAD@&#123;11&#125;: commit: 修改后再次提交</span><br><span class="line">5eb9c6b HEAD@&#123;12&#125;: commit (initial): 这是第一次提交</span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> cat goods.txt</span></span><br><span class="line">这是一个测试文件</span><br><span class="line">第一测试</span><br><span class="line">已经追踪的文件可以直接使用git commit -a</span><br><span class="line">AAAAA</span><br><span class="line">BBBBB</span><br><span class="line">CCCCC</span><br><span class="line">DDDDD</span><br><span class="line">EEEEE</span><br><span class="line">FFFFF</span><br><span class="line">GGGGG</span><br><span class="line">HHHHH</span><br><span class="line">IIIII</span><br><span class="line">JJJJJ</span><br><span class="line">KKKKK</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git reset --hard ac91193</span></span><br><span class="line">HEAD is now at ac91193 hhhh</span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> cat goods.txt</span></span><br><span class="line">这是一个测试文件</span><br><span class="line">第一测试</span><br><span class="line">已经追踪的文件可以直接使用git commit -a</span><br><span class="line">AAAAA</span><br><span class="line">BBBBB</span><br><span class="line">CCCCC</span><br><span class="line">DDDDD</span><br><span class="line">EEEEE</span><br><span class="line">FFFFF</span><br><span class="line">GGGGG</span><br><span class="line">HHHHH</span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git reflog</span></span><br><span class="line">ac91193 (HEAD -&gt; master) HEAD@&#123;0&#125;: reset: moving to ac91193</span><br><span class="line">82bf8af HEAD@&#123;1&#125;: commit: jjjj</span><br><span class="line">7652962 HEAD@&#123;2&#125;: commit: kkkk</span><br><span class="line">c069475 HEAD@&#123;3&#125;: commit: iiii</span><br><span class="line">ac91193 (HEAD -&gt; master) HEAD@&#123;4&#125;: commit: hhhh</span><br><span class="line">dc7d3f0 HEAD@&#123;5&#125;: commit: gggg</span><br><span class="line">18ef0fe HEAD@&#123;6&#125;: commit: ffff</span><br><span class="line">40ad731 HEAD@&#123;7&#125;: commit: eeee</span><br><span class="line">e7973aa HEAD@&#123;8&#125;: commit: dddd</span><br><span class="line">5ce0cf7 HEAD@&#123;9&#125;: commit: cccc</span><br><span class="line">119ce0c HEAD@&#123;10&#125;: commit: bbbb</span><br><span class="line">7a3ada7 HEAD@&#123;11&#125;: commit: aaaa</span><br><span class="line">cade2c5 HEAD@&#123;12&#125;: commit: 修改后再次提交</span><br><span class="line">5eb9c6b HEAD@&#123;13&#125;: commit (initial): 这是第一次提交</span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git reset --hard 82bf8af</span></span><br><span class="line">HEAD is now at 82bf8af jjjj</span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git reflog</span></span><br><span class="line">82bf8af (HEAD -&gt; master) HEAD@&#123;0&#125;: reset: moving to 82bf8af</span><br><span class="line">ac91193 HEAD@&#123;1&#125;: reset: moving to ac91193</span><br><span class="line">82bf8af (HEAD -&gt; master) HEAD@&#123;2&#125;: commit: jjjj</span><br><span class="line">7652962 HEAD@&#123;3&#125;: commit: kkkk</span><br><span class="line">c069475 HEAD@&#123;4&#125;: commit: iiii</span><br><span class="line">ac91193 HEAD@&#123;5&#125;: commit: hhhh</span><br><span class="line">dc7d3f0 HEAD@&#123;6&#125;: commit: gggg</span><br><span class="line">18ef0fe HEAD@&#123;7&#125;: commit: ffff</span><br><span class="line">40ad731 HEAD@&#123;8&#125;: commit: eeee</span><br><span class="line">e7973aa HEAD@&#123;9&#125;: commit: dddd</span><br><span class="line">5ce0cf7 HEAD@&#123;10&#125;: commit: cccc</span><br><span class="line">119ce0c HEAD@&#123;11&#125;: commit: bbbb</span><br><span class="line">7a3ada7 HEAD@&#123;12&#125;: commit: aaaa</span><br><span class="line">cade2c5 HEAD@&#123;13&#125;: commit: 修改后再次提交</span><br><span class="line">5eb9c6b HEAD@&#123;14&#125;: commit (initial): 这是第一次提交</span><br><span class="line"><span class="meta">#</span><span class="bash"> 使用^向后移动指针，只能后退</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">log</span> --oneline</span></span><br><span class="line">82bf8af (HEAD -&gt; master) jjjj</span><br><span class="line">7652962 kkkk</span><br><span class="line">c069475 iiii</span><br><span class="line">ac91193 hhhh</span><br><span class="line">dc7d3f0 gggg</span><br><span class="line">18ef0fe ffff</span><br><span class="line">40ad731 eeee</span><br><span class="line">e7973aa dddd</span><br><span class="line">5ce0cf7 cccc</span><br><span class="line">119ce0c bbbb</span><br><span class="line">7a3ada7 aaaa</span><br><span class="line">cade2c5 修改后再次提交</span><br><span class="line">5eb9c6b 这是第一次提交</span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git reset --hard HEAD^^^</span></span><br><span class="line">HEAD is now at ac91193 hhhh</span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">log</span> --oneline</span></span><br><span class="line">ac91193 (HEAD -&gt; master) hhhh</span><br><span class="line">dc7d3f0 gggg</span><br><span class="line">18ef0fe ffff</span><br><span class="line">40ad731 eeee</span><br><span class="line">e7973aa dddd</span><br><span class="line">5ce0cf7 cccc</span><br><span class="line">119ce0c bbbb</span><br><span class="line">7a3ada7 aaaa</span><br><span class="line">cade2c5 修改后再次提交</span><br><span class="line">5eb9c6b 这是第一次提交</span><br><span class="line"><span class="meta">#</span><span class="bash"> 使用~指定移动的距离</span></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git reset --hard HEAD~3</span></span><br><span class="line">HEAD is now at 40ad731 eeee</span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">log</span> --oneline</span></span><br><span class="line">40ad731 (HEAD -&gt; master) eeee</span><br><span class="line">e7973aa dddd</span><br><span class="line">5ce0cf7 cccc</span><br><span class="line">119ce0c bbbb</span><br><span class="line">7a3ada7 aaaa</span><br><span class="line">cade2c5 修改后再次提交</span><br><span class="line">5eb9c6b 这是第一次提交</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>文件的删除：git不会删除版本库</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br></pre></td><td class="code"><pre><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> vim aaa.txt</span></span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git add aaa.txt</span></span><br><span class="line">warning: LF will be replaced by CRLF in aaa.txt.</span><br><span class="line">The file will have its original line endings in your working directory</span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git commit -m <span class="string">"添加了aaa.txt文件测试删除操作"</span></span></span><br><span class="line">[master b7d5312] 添加了aaa.txt文件测试删除操作</span><br><span class="line"> 1 file changed, 3 insertions(+)</span><br><span class="line"> create mode 100644 aaa.txt</span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git status</span></span><br><span class="line">On branch master</span><br><span class="line">nothing to commit, working tree clean</span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> rm aaa.txt</span></span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git status</span></span><br><span class="line">On branch master</span><br><span class="line">Changes not staged for commit:</span><br><span class="line">  (use "git add/rm &lt;file&gt;..." to update what will be committed)</span><br><span class="line">  (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)</span><br><span class="line"></span><br><span class="line">        deleted:    aaa.txt</span><br><span class="line"></span><br><span class="line">no changes added to commit (use "git add" and/or "git commit -a")</span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git add aaa.txt</span></span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git status</span></span><br><span class="line">On branch master</span><br><span class="line">Changes to be committed:</span><br><span class="line">  (use "git reset HEAD &lt;file&gt;..." to unstage)</span><br><span class="line"></span><br><span class="line">        deleted:    aaa.txt</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git commit -m <span class="string">"删除后提交"</span></span></span><br><span class="line">[master d321e60] 删除后提交</span><br><span class="line"> 1 file changed, 3 deletions(-)</span><br><span class="line"> delete mode 100644 aaa.txt</span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git status</span></span><br><span class="line">On branch master</span><br><span class="line">nothing to commit, working tree clean</span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> ll</span></span><br><span class="line">total 1</span><br><span class="line">-rw-r--r-- 1 root 197121 173 九月    5 08:30 goods.txt</span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git reflog</span></span><br><span class="line">d321e60 (HEAD -&gt; master) HEAD@&#123;0&#125;: commit: 删除后提交</span><br><span class="line">b7d5312 HEAD@&#123;1&#125;: commit: 添加了aaa.txt文件测试删除操作</span><br><span class="line">82bf8af HEAD@&#123;2&#125;: reset: moving to 82bf8af</span><br><span class="line">40ad731 HEAD@&#123;3&#125;: reset: moving to HEAD~3</span><br><span class="line">ac91193 HEAD@&#123;4&#125;: reset: moving to HEAD^^^</span><br><span class="line">82bf8af HEAD@&#123;5&#125;: reset: moving to 82bf8af</span><br><span class="line">ac91193 HEAD@&#123;6&#125;: reset: moving to ac91193</span><br><span class="line">82bf8af HEAD@&#123;7&#125;: commit: jjjj</span><br><span class="line">7652962 HEAD@&#123;8&#125;: commit: kkkk</span><br><span class="line">c069475 HEAD@&#123;9&#125;: commit: iiii</span><br><span class="line">ac91193 HEAD@&#123;10&#125;: commit: hhhh</span><br><span class="line">dc7d3f0 HEAD@&#123;11&#125;: commit: gggg</span><br><span class="line">18ef0fe HEAD@&#123;12&#125;: commit: ffff</span><br><span class="line">40ad731 HEAD@&#123;13&#125;: commit: eeee</span><br><span class="line">e7973aa HEAD@&#123;14&#125;: commit: dddd</span><br><span class="line">5ce0cf7 HEAD@&#123;15&#125;: commit: cccc</span><br><span class="line">119ce0c HEAD@&#123;16&#125;: commit: bbbb</span><br><span class="line">7a3ada7 HEAD@&#123;17&#125;: commit: aaaa</span><br><span class="line">cade2c5 HEAD@&#123;18&#125;: commit: 修改后再次提交</span><br><span class="line">5eb9c6b HEAD@&#123;19&#125;: commit (initial): 这是第一次提交</span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git reset --hard b7d5312</span></span><br><span class="line">HEAD is now at b7d5312 添加了aaa.txt文件测试删除操作</span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> ll</span></span><br><span class="line">total 2</span><br><span class="line">-rw-r--r-- 1 root 197121  18 九月    5 08:36 aaa.txt</span><br><span class="line">-rw-r--r-- 1 root 197121 173 九月    5 08:30 goods.txt</span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> cat aaa.txt</span></span><br><span class="line">aaaa</span><br><span class="line">bbbb</span><br><span class="line">cccc</span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git reset --hard d321e60</span></span><br><span class="line">HEAD is now at d321e60 删除后提交</span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> ll</span></span><br><span class="line">total 1</span><br><span class="line">-rw-r--r-- 1 root 197121 173 九月    5 08:30 goods.txt</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>文件找回：前提是文件存在时已经被提交到本地库中。git reset –hard [指针位置]</p>
+<ul>
+<li>删除操作已经提交到本地库：指针位置指向历史记录</li>
+<li>删除操作尚未提交到本地库：指针位置使用HEAD</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> vim apple.txt</span></span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git add apple.txt</span></span><br><span class="line">warning: LF will be replaced by CRLF in apple.txt.</span><br><span class="line">The file will have its original line endings in your working directory</span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git commit -m <span class="string">"新建了apple.txt文件"</span></span></span><br><span class="line">[master 1946abf] 新建了apple.txt文件</span><br><span class="line"> 1 file changed, 3 insertions(+)</span><br><span class="line"> create mode 100644 apple.txt</span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git reflog</span></span><br><span class="line">1946abf (HEAD -&gt; master) HEAD@&#123;0&#125;: commit: 新建了apple.txt文件</span><br><span class="line">d321e60 HEAD@&#123;1&#125;: reset: moving to d321e60</span><br><span class="line">b7d5312 HEAD@&#123;2&#125;: reset: moving to b7d5312</span><br><span class="line">d321e60 HEAD@&#123;3&#125;: commit: 删除后提交</span><br><span class="line">b7d5312 HEAD@&#123;4&#125;: commit: 添加了aaa.txt文件测试删除操作</span><br><span class="line">82bf8af HEAD@&#123;5&#125;: reset: moving to 82bf8af</span><br><span class="line">40ad731 HEAD@&#123;6&#125;: reset: moving to HEAD~3</span><br><span class="line">ac91193 HEAD@&#123;7&#125;: reset: moving to HEAD^^^</span><br><span class="line">82bf8af HEAD@&#123;8&#125;: reset: moving to 82bf8af</span><br><span class="line">ac91193 HEAD@&#123;9&#125;: reset: moving to ac91193</span><br><span class="line">82bf8af HEAD@&#123;10&#125;: commit: jjjj</span><br><span class="line">7652962 HEAD@&#123;11&#125;: commit: kkkk</span><br><span class="line">c069475 HEAD@&#123;12&#125;: commit: iiii</span><br><span class="line">ac91193 HEAD@&#123;13&#125;: commit: hhhh</span><br><span class="line">dc7d3f0 HEAD@&#123;14&#125;: commit: gggg</span><br><span class="line">18ef0fe HEAD@&#123;15&#125;: commit: ffff</span><br><span class="line">40ad731 HEAD@&#123;16&#125;: commit: eeee</span><br><span class="line">e7973aa HEAD@&#123;17&#125;: commit: dddd</span><br><span class="line">5ce0cf7 HEAD@&#123;18&#125;: commit: cccc</span><br><span class="line">119ce0c HEAD@&#123;19&#125;: commit: bbbb</span><br><span class="line">7a3ada7 HEAD@&#123;20&#125;: commit: aaaa</span><br><span class="line">cade2c5 HEAD@&#123;21&#125;: commit: 修改后再次提交</span><br><span class="line">5eb9c6b HEAD@&#123;22&#125;: commit (initial): 这是第一次提交</span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> rm apple.txt</span></span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> ll</span></span><br><span class="line">total 1</span><br><span class="line">-rw-r--r-- 1 root 197121 173 九月    5 08:30 goods.txt</span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git add apple.txt</span></span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git status</span></span><br><span class="line">On branch master</span><br><span class="line">Changes to be committed:</span><br><span class="line">  (use "git reset HEAD &lt;file&gt;..." to unstage)</span><br><span class="line"></span><br><span class="line">        deleted:    apple.txt</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git reset --hard HEAD</span></span><br><span class="line">HEAD is now at 1946abf 新建了apple.txt文件</span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> ll</span></span><br><span class="line">total 2</span><br><span class="line">-rw-r--r-- 1 root 197121  21 九月    5 08:50 apple.txt</span><br><span class="line">-rw-r--r-- 1 root 197121 173 九月    5 08:30 goods.txt</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>比较文件差异</p>
+<ul>
+<li><p>git diff [文件名]：将工作区中的文件和暂存区进行比较</p>
+</li>
+<li><p>git diff [本地库中历史版本] [文件名]：将工作区中文件和本地库历史记录比较。</p>
+</li>
+<li><p>git diff：不带文件名比较多个文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> vim apple.txt</span></span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git diff apple.txt</span></span><br><span class="line">diff --git a/apple.txt b/apple.txt</span><br><span class="line">index a6617d8..a664f0a 100644</span><br><span class="line">--- a/apple.txt</span><br><span class="line">+++ b/apple.txt</span><br><span class="line">@@ -1,3 +1,5 @@</span><br><span class="line">-apple</span><br><span class="line">+apple################</span><br><span class="line"> pear</span><br><span class="line"> cherry</span><br><span class="line">+peach</span><br><span class="line">+mongo</span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git add apple.txt</span></span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git diff apple.txt</span></span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git diff HEAD apple.txt</span></span><br><span class="line">diff --git a/apple.txt b/apple.txt</span><br><span class="line">index a6617d8..a664f0a 100644</span><br><span class="line">--- a/apple.txt</span><br><span class="line">+++ b/apple.txt</span><br><span class="line">@@ -1,3 +1,5 @@</span><br><span class="line">-apple</span><br><span class="line">+apple################</span><br><span class="line"> pear</span><br><span class="line"> cherry</span><br><span class="line">+peach</span><br><span class="line">+mongo</span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git diff HEAD^ apple.txt</span></span><br><span class="line">diff --git a/apple.txt b/apple.txt</span><br><span class="line">new file mode 100644</span><br><span class="line">index 0000000..a664f0a</span><br><span class="line">--- /dev/null</span><br><span class="line">+++ b/apple.txt</span><br><span class="line">@@ -0,0 +1,5 @@</span><br><span class="line">+apple################</span><br><span class="line">+pear</span><br><span class="line">+cherry</span><br><span class="line">+peach</span><br><span class="line">+mongo</span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> vim goods.txt</span></span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git diff HEAD</span></span><br><span class="line">diff --git a/apple.txt b/apple.txt</span><br><span class="line">index a6617d8..a664f0a 100644</span><br><span class="line">--- a/apple.txt</span><br><span class="line">+++ b/apple.txt</span><br><span class="line">@@ -1,3 +1,5 @@</span><br><span class="line">-apple</span><br><span class="line">+apple################</span><br><span class="line"> pear</span><br><span class="line"> cherry</span><br><span class="line">+peach</span><br><span class="line">+mongo</span><br><span class="line">diff --git a/goods.txt b/goods.txt</span><br><span class="line">index 3deb833..cbf6f03 100644</span><br><span class="line">--- a/goods.txt</span><br><span class="line">+++ b/goods.txt</span><br><span class="line">@@ -12,4 +12,5 @@ HHHHH</span><br><span class="line"> IIIII</span><br><span class="line"> JJJJJ</span><br><span class="line"> KKKKK</span><br><span class="line">+LLLLL</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h3><ul>
+<li><p>什么是分支：在版本控制过程中，使用多条线同时推进多个任务。</p>
+</li>
+<li><p>分支的作用</p>
+<ul>
+<li>同时并行推进多个功能开发，提高开发效率。</li>
+<li>各分支开发过程中，如果某个分支失败不会对其他分支有任何影响，失败的分支可以直接删除。</li>
+</ul>
+</li>
+<li><p>分支操作</p>
+<ul>
+<li><p>创建分支：git branch [分支名]</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git branch hot_fix</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看分支：git branch -v</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git branch -v</span></span><br><span class="line">  hot_fix 83fd306 全部提交后用于分支测试</span><br><span class="line">* master  83fd306 全部提交后用于分支测试</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>切换分支：git checkout [分支名]</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git checkout hot_fix</span></span><br><span class="line">Switched to branch 'hot_fix'</span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (hot_fix)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git branch -v</span></span><br><span class="line">* hot_fix 83fd306 全部提交后用于分支测试</span><br><span class="line">  master  83fd306 全部提交后用于分支测试</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>合并分支</p>
+<ul>
+<li>第一步：切换到接收修改的分支，git checkout [被合并分支名]</li>
+<li>第二步：执行git merge [有新内容的分支名]</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (hot_fix)</span><br><span class="line"><span class="meta">$</span><span class="bash"> vim apple.txt</span></span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (hot_fix)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git add apple.txt</span></span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (hot_fix)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git commit -m <span class="string">"修改分支中的文件"</span> apple.txt</span></span><br><span class="line">[hot_fix 68db147] 修改分支中的文件</span><br><span class="line"> 1 file changed, 1 insertion(+)</span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (hot_fix)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git branch -v</span></span><br><span class="line">* hot_fix 68db147 修改分支中的文件</span><br><span class="line">  master  83fd306 全部提交后用于分支测试</span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (hot_fix)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git checkout master</span></span><br><span class="line">Switched to branch 'master'</span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git branch -v</span></span><br><span class="line">  hot_fix 68db147 修改分支中的文件</span><br><span class="line">* master  83fd306 全部提交后用于分支测试</span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git merge hot_fix</span></span><br><span class="line">Updating 83fd306..68db147</span><br><span class="line">Fast-forward</span><br><span class="line"> apple.txt | 1 +</span><br><span class="line"> 1 file changed, 1 insertion(+)</span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> cat apple.txt</span></span><br><span class="line"><span class="meta">apple#</span><span class="bash"><span class="comment">###############</span></span></span><br><span class="line">pear</span><br><span class="line">cherry</span><br><span class="line">peach</span><br><span class="line">mongo</span><br><span class="line"><span class="meta">#</span><span class="bash"> edit by hot_fix</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>解决冲突</p>
+<ul>
+<li>第一步：编辑产生冲突的文件，删除特殊符号</li>
+<li>第二步：修改文件到满意的程序，保存退出</li>
+<li>第三步：git add [文件名]</li>
+<li>第四步：git commit -m “日志信息”，注意不能带文件名</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br></pre></td><td class="code"><pre><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git branch -v</span></span><br><span class="line">  hot_fix 68db147 修改分支中的文件</span><br><span class="line">* master  68db147 修改分支中的文件</span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> vim goods.txt</span></span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git add goods.txt</span></span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git commit -m <span class="string">"在master中修改"</span></span></span><br><span class="line">[master da19672] 在master中修改</span><br><span class="line"> 1 file changed, 1 insertion(+), 1 deletion(-)</span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git branch -v</span></span><br><span class="line">  hot_fix 68db147 修改分支中的文件</span><br><span class="line">* master  da19672 在master中修改</span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> cat goods.txt</span></span><br><span class="line">这是一个测试文件</span><br><span class="line">第一测试</span><br><span class="line">已经追踪的文件可以直接使用git commit -a</span><br><span class="line">AAAAA</span><br><span class="line">BBBBB</span><br><span class="line">CCCCC</span><br><span class="line">DDDDD</span><br><span class="line">EEEEE</span><br><span class="line">FFFFF</span><br><span class="line">GGGGG</span><br><span class="line">HHHHH</span><br><span class="line">IIIII</span><br><span class="line">JJJJJ #在master分支中修改</span><br><span class="line">KKKKK</span><br><span class="line">LLLLL</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git checkout hot_fix</span></span><br><span class="line">Switched to branch 'hot_fix'</span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (hot_fix)</span><br><span class="line"><span class="meta">$</span><span class="bash"> vim goods.txt</span></span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (hot_fix)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git add goods.txt</span></span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (hot_fix)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git commit goods.txt -m <span class="string">"在hot_fix分支中修改"</span></span></span><br><span class="line">[hot_fix e0512c6] 在hot_fix分支中修改</span><br><span class="line"> 1 file changed, 1 insertion(+), 1 deletion(-)</span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (hot_fix)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git branch -v</span></span><br><span class="line">* hot_fix e0512c6 在hot_fix分支中修改</span><br><span class="line">  master  da19672 在master中修改</span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (hot_fix)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git merge master</span></span><br><span class="line">Auto-merging goods.txt</span><br><span class="line">CONFLICT (content): Merge conflict in goods.txt</span><br><span class="line">Automatic merge failed; fix conflicts and then commit the result.</span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (hot_fix|MERGING)</span><br><span class="line"><span class="meta">$</span><span class="bash"> vim goods.txt</span></span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (hot_fix|MERGING)</span><br><span class="line"><span class="meta">$</span><span class="bash"> cat goods.txt</span></span><br><span class="line">这是一个测试文件</span><br><span class="line">第一测试</span><br><span class="line">已经追踪的文件可以直接使用git commit -a</span><br><span class="line">AAAAA</span><br><span class="line">BBBBB</span><br><span class="line">CCCCC</span><br><span class="line">DDDDD</span><br><span class="line">EEEEE</span><br><span class="line">FFFFF</span><br><span class="line">GGGGG</span><br><span class="line">HHHHH</span><br><span class="line">IIIII</span><br><span class="line">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</span><br><span class="line">JJJJJ # 在hot_fix中修改</span><br><span class="line">=======</span><br><span class="line">JJJJJ #在master分支中修改</span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt;&gt;&gt;&gt;&gt; master</span></span><br><span class="line">KKKKK</span><br><span class="line">LLLLL</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (hot_fix|MERGING)</span><br><span class="line"><span class="meta">$</span><span class="bash"> vim goods.txt</span></span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (hot_fix|MERGING)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git status</span></span><br><span class="line">On branch hot_fix</span><br><span class="line">You have unmerged paths.</span><br><span class="line">  (fix conflicts and run "git commit")</span><br><span class="line">  (use "git merge --abort" to abort the merge)</span><br><span class="line"></span><br><span class="line">Unmerged paths:</span><br><span class="line">  (use "git add &lt;file&gt;..." to mark resolution)</span><br><span class="line"></span><br><span class="line">        both modified:   goods.txt</span><br><span class="line"></span><br><span class="line">no changes added to commit (use "git add" and/or "git commit -a")</span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (hot_fix|MERGING)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git add goods.txt</span></span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (hot_fix|MERGING)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git status</span></span><br><span class="line">On branch hot_fix</span><br><span class="line">All conflicts fixed but you are still merging.</span><br><span class="line">  (use "git commit" to conclude merge)</span><br><span class="line"></span><br><span class="line">Changes to be committed:</span><br><span class="line"></span><br><span class="line">        modified:   goods.txt</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (hot_fix|MERGING)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git commit -m <span class="string">"解决冲突，不需要带文件名"</span></span></span><br><span class="line">[hot_fix 1a69d93] 解决冲突，不需要带文件名</span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/WeChat (hot_fix)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git status</span></span><br><span class="line">On branch hot_fix</span><br><span class="line">nothing to commit, working tree clean</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="哈希"><a href="#哈希" class="headerlink" title="哈希"></a>哈希</h3><ul>
+<li><p>哈希是一个系列的加密算法，各种哈希算法有不同的加密强度，但都具有以下几个共同点。</p>
+<ul>
+<li>不管输入数据的数据量有多大，同一个哈希算法得到的加密结果长度固定。</li>
+<li>输入数据和哈希算法确定则输出数据能够保证不变。</li>
+<li>输入数据变化，哈希算法确定，则输出数据一定有变化且通常变化很大。</li>
+<li>哈希算法不可逆。</li>
+</ul>
+</li>
+<li><p>哈希算法有MD5、SHA、CRC32等，哈希算法可以用于验证文件的完整性。</p>
+</li>
+<li><p>git底层采用SHA-1算法。</p>
+</li>
+</ul>
+<h3 id="git文件管理机制"><a href="#git文件管理机制" class="headerlink" title="git文件管理机制"></a>git文件管理机制</h3><ul>
+<li>git把数据看作是小型文件系统的一组快照，每次提交更新都会对当前全部文件制作一个快照并保存其索引。为提交效率，对于没有修改的文件，git只保留一个链接指向之前存储的文件而不再重复存储，因此git的工作方式被称为快照流。</li>
+<li>git中的版本切换知识快照索引指针的移动。</li>
+</ul>
+<h2 id="远程库操作"><a href="#远程库操作" class="headerlink" title="远程库操作"></a>远程库操作</h2><ul>
+<li><p>注册github账号</p>
+</li>
+<li><p>创建远程库</p>
+</li>
+<li><p>创建远程库别名</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">root@kvm02 MINGW64 /d/repo/rtest (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git remote add rtest https://github.com/shinsue/rtest.git</span></span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/rtest (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git remote -v</span></span><br><span class="line">rtest   https://github.com/shinsue/rtest.git (fetch)</span><br><span class="line">rtest   https://github.com/shinsue/rtest.git (push)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>推送</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">root@kvm02 MINGW64 /d/repo/rtest (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git push rtest master</span></span><br><span class="line">Enumerating objects: 3, done.</span><br><span class="line">Counting objects: 100% (3/3), done.</span><br><span class="line">Writing objects: 100% (3/3), 252 bytes | 63.00 KiB/s, done.</span><br><span class="line">Total 3 (delta 0), reused 0 (delta 0)</span><br><span class="line">To https://github.com/shinsue/rtest.git</span><br><span class="line"> * [new branch]      master -&gt; master</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>克隆：git clone [远程地址]</p>
+<ul>
+<li><p>完整的把远程库下载到本地</p>
+</li>
+<li><p>创建远程地址别名</p>
+</li>
+<li><p>初始化本地库</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">root@kvm02 MINGW64 /d/repo/rtest2</span><br><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">clone</span> https://github.com/shinsue/rtest.git</span></span><br><span class="line">Cloning into 'rtest'...</span><br><span class="line">remote: Enumerating objects: 3, done.</span><br><span class="line">remote: Counting objects: 100% (3/3), done.</span><br><span class="line">remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0</span><br><span class="line">Unpacking objects: 100% (3/3), done.</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>邀请团队成员</p>
+</li>
+<li><p>拉取</p>
+<ul>
+<li>pull=fetch+merge</li>
+<li>git fetch [远程库地址别名] [远程分支名]</li>
+<li>git merge [远程库地址别名/远程分支名]</li>
+<li>git pull [远程库地址别名] [远程分支名] </li>
+</ul>
+</li>
+<li><p>冲突</p>
+<ul>
+<li>如果不是基于远程库(github)的最新版本所做的修改，则在push时需要先pull最新版本到本地。</li>
+<li>如果pull的版本与本地版本产生冲突，则需要解决冲突后提交，提交时不能带文件名。</li>
+</ul>
+</li>
+<li><p>跨团队协作</p>
+<ul>
+<li>fork</li>
+<li>本地修改</li>
+<li>pull request</li>
+</ul>
+</li>
+</ul>
+<h3 id="SSH登录"><a href="#SSH登录" class="headerlink" title="SSH登录"></a>SSH登录</h3><ul>
+<li><p>ssh实现免密登录</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 生成SSH秘钥</span></span><br><span class="line">root@kvm02 MINGW64 ~</span><br><span class="line"><span class="meta">$</span><span class="bash"> ssh-keygen -t rsa -C ttf345@qq.com</span></span><br><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file in which to save the key (/c/Users/root/.ssh/id_rsa):</span><br><span class="line">Created directory '/c/Users/root/.ssh'.</span><br><span class="line">Enter passphrase (empty for no passphrase):</span><br><span class="line">Enter same passphrase again:</span><br><span class="line">Your identification has been saved in /c/Users/root/.ssh/id_rsa.</span><br><span class="line">Your public key has been saved in /c/Users/root/.ssh/id_rsa.pub.</span><br><span class="line">The key fingerprint is:</span><br><span class="line">SHA256:V9fmahzOdowIeCQkqPJENsNeEAdisKbJPRpxTKFCQ+8 ttf345@qq.com</span><br><span class="line">The key's randomart image is:</span><br><span class="line">+---[RSA 3072]----+</span><br><span class="line">|=*+*o.. .        |</span><br><span class="line">|oo%.o  o       . |</span><br><span class="line">|oB O    . . . . o|</span><br><span class="line">|*.O      + . . o |</span><br><span class="line">|o* E    S +   . .|</span><br><span class="line">|  + .    o . = = |</span><br><span class="line">| .          . O o|</span><br><span class="line">|             o . |</span><br><span class="line">|                 |</span><br><span class="line">+----[SHA256]-----+</span><br><span class="line"><span class="meta">#</span><span class="bash"> 在github设置页中添加</span></span><br><span class="line">root@kvm02 MINGW64 ~</span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> ~/.ssh</span></span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 ~/.ssh</span><br><span class="line"><span class="meta">$</span><span class="bash"> ls</span></span><br><span class="line">id_rsa  id_rsa.pub</span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 ~/.ssh</span><br><span class="line"><span class="meta">$</span><span class="bash"> cat id_rsa.pub</span></span><br><span class="line">ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCySSHCLJGRdyJKK/ShZRF0dSarJT/zPGUj6wG6+kxix6WwXTXdq2Qds9aUQ4myQvAA6fEInqZB3V5mckMaF88hE5gslcoroOKtL49QObRGGBoas+IyQ3x21ssQXOnDnNRrUMHDPFxoeQiy//BN/QcGv5tJ+5Ud4la5u07De9patZH4cC7QholrAZ7H8HwfMHVLQJ8VCLJwYDwTvsRFTLzywOwIsxOK6hDbKSrRKut1UaJH2ODs9Sb7c3Xfq0RppFRmHCTpj/I+VcEmSWTKiyiYHmuPtqLVj432/hm+nOBDdvg66gVRiW51GtW05gWtgux2B8yLe6Px0/SXGB31m6s1Zb4dYS2kwSfRc+k+rPLdRa7w9UabE3gvwlECPQXUm26Uw6myMI3m81Rzw3EfSdjuZpGzc7n+7w23HR6I8+YQsIiSBplWSLn/uEXhYYkrCyILH6+PYGm2RAYJlnkyKsXNOnruPor54kVrwV/qFPunKBtxgCvUJsm6y7ocB2DepPU= ttf345@qq.com</span><br><span class="line"><span class="meta">#</span><span class="bash"> 测试push</span></span><br><span class="line">root@kvm02 MINGW64 /d/repo/rtest (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> vim <span class="built_in">test</span></span></span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/rtest (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git commit -m <span class="string">"测试ssh登录"</span> <span class="built_in">test</span></span></span><br><span class="line">warning: LF will be replaced by CRLF in test.</span><br><span class="line">The file will have its original line endings in your working directory</span><br><span class="line">warning: LF will be replaced by CRLF in test.</span><br><span class="line">The file will have its original line endings in your working directory</span><br><span class="line">[master a8899d6] 测试ssh登录</span><br><span class="line"> 1 file changed, 1 insertion(+)</span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/rtest (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git remote -v</span></span><br><span class="line">rtest   https://github.com/shinsue/rtest.git (fetch)</span><br><span class="line">rtest   https://github.com/shinsue/rtest.git (push)</span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/rtest (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git remote add rtest_ssh git@github.com:shinsue/rtest.git</span></span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/rtest (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git remote -v</span></span><br><span class="line">rtest   https://github.com/shinsue/rtest.git (fetch)</span><br><span class="line">rtest   https://github.com/shinsue/rtest.git (push)</span><br><span class="line">rtest_ssh       git@github.com:shinsue/rtest.git (fetch)</span><br><span class="line">rtest_ssh       git@github.com:shinsue/rtest.git (push)</span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/rtest (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git push rtest_ssh master</span></span><br><span class="line">Warning: Permanently added the RSA host key for IP address '13.250.177.223' to the list of known hosts.</span><br><span class="line">Enumerating objects: 5, done.</span><br><span class="line">Counting objects: 100% (5/5), done.</span><br><span class="line">Writing objects: 100% (3/3), 281 bytes | 281.00 KiB/s, done.</span><br><span class="line">Total 3 (delta 0), reused 0 (delta 0)</span><br><span class="line">To github.com:shinsue/rtest.git</span><br><span class="line">   4b563e0..a8899d6  master -&gt; master</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="git图形化界面操作"><a href="#git图形化界面操作" class="headerlink" title="git图形化界面操作"></a>git图形化界面操作</h2><ul>
+<li>eclicpse操作</li>
+</ul>
+<h2 id="git工作流"><a href="#git工作流" class="headerlink" title="git工作流"></a>git工作流</h2><h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><ul>
+<li>集中式工作流：和SVN类似，以中央仓库作为项目所有修改的单点实体。</li>
+<li>GitFlow工作流：为功能开发、发布准备和维护设立了独立的分支，使迭代更流畅，严格的分支模型也为大型项目提供了非常必要的结构。</li>
+<li>forking工作流：在gitflow基础上，利用git的fork和pull request功能达到代码审核的目的。适合安全可靠的管理大团队而且能接受不信任贡献者的提交。</li>
+</ul>
+<h3 id="gitflow工作流"><a href="#gitflow工作流" class="headerlink" title="gitflow工作流"></a>gitflow工作流</h3><ul>
+<li>分支种类<ul>
+<li>主干分支master：主要管理正在运行的生产环境代码，保持与正在运行的生产环境一致。</li>
+<li>开发分支develop：主要管理正在开发过程中的代码，通常为最新的代码。</li>
+<li>bug修复分支hotfix：主要管理生产环境下出现的紧急修复的代码，从主干分支分出，修复bug测试上线后，合并到主干分支，可视情况决定是否删除该分支。</li>
+<li>预发布分支release：大版本上线前从开发分支分出，用于最后阶段的集成测试，上线后会合并到主干分支，生成环境运行稳定一段阶段后可视情况删除。</li>
+<li>功能分支feature：对于中长期开发模块予以独立开发，完成后合并到开发分支。</li>
+</ul>
+</li>
+</ul>
+<h2 id="gitlab服务器环境搭建"><a href="#gitlab服务器环境搭建" class="headerlink" title="gitlab服务器环境搭建"></a>gitlab服务器环境搭建</h2><ol>
+<li><p>安装配置环境</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 基本组件安装</span></span><br><span class="line">[root@mygitlab ~]# sudo yum install -y curl policycoreutils-python openssh-server</span><br><span class="line">[root@mygitlab ~]# sudo systemctl enable sshd</span><br><span class="line">[root@mygitlab ~]# sudo systemctl start sshd</span><br><span class="line">[root@mygitlab ~]# sudo firewall-cmd --permanent --add-service=http</span><br><span class="line">success</span><br><span class="line">[root@mygitlab ~]# sudo systemctl reload firewalld.service </span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装postfix邮件服务用于发送邮件，也可以使用其他或外部邮件服务</span></span><br><span class="line">[root@mygitlab ~]# sudo yum install postfix</span><br><span class="line">Loaded plugins: fastestmirror</span><br><span class="line">Loading mirror speeds from cached hostfile</span><br><span class="line"> * base: mirrors.aliyun.com</span><br><span class="line"> * extras: mirrors.aliyun.com</span><br><span class="line"> * updates: mirrors.aliyun.com</span><br><span class="line">Package 2:postfix-2.10.1-7.el7.x86_64 already installed and latest version</span><br><span class="line">Nothing to do</span><br><span class="line">[root@mygitlab ~]# sudo systemctl enable postfix</span><br><span class="line">[root@mygitlab ~]# sudo systemctl start postfix</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ol>
+<ol start="2">
+<li><p>添加gitlab源并安装</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 添加安装源：注意选择安装ce或ee版本</span></span><br><span class="line">[root@mygitlab ~]# curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.rpm.sh | sudo bash</span><br><span class="line">[root@mygitlab ~]# yum list gitlab*</span><br><span class="line">Loaded plugins: fastestmirror</span><br><span class="line">Loading mirror speeds from cached hostfile</span><br><span class="line"> * base: mirrors.aliyun.com</span><br><span class="line"> * extras: mirrors.aliyun.com</span><br><span class="line"> * updates: mirrors.aliyun.com</span><br><span class="line">Available Packages</span><br><span class="line">gitlab-ce.x86_64                                            12.2.4-ce.0.el7           </span><br><span class="line">gitlab-ee.x86_64                                            12.2.4-ee.0.el7                  </span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装gitlab</span></span><br><span class="line">[root@mygitlab ~]# yum install -y gitlab-ce</span><br><span class="line"><span class="meta">#</span><span class="bash"> 执行配置</span></span><br><span class="line">[root@mygitlab ~]# gitlab-ctl reconfigure</span><br><span class="line"><span class="meta">#</span><span class="bash"> 重启服务</span></span><br><span class="line">[root@mygitlib ~]# gitlab-ctl restart</span><br><span class="line">ok: run: alertmanager: (pid 18409) 0s</span><br><span class="line">ok: run: gitaly: (pid 18425) 0s</span><br><span class="line">ok: run: gitlab-monitor: (pid 18443) 1s</span><br><span class="line">ok: run: gitlab-workhorse: (pid 18457) 0s</span><br><span class="line">ok: run: grafana: (pid 18465) 1s</span><br><span class="line">ok: run: logrotate: (pid 18478) 0s</span><br><span class="line">ok: run: nginx: (pid 18484) 1s</span><br><span class="line">ok: run: node-exporter: (pid 18566) 0s</span><br><span class="line">ok: run: postgres-exporter: (pid 18572) 0s</span><br><span class="line">ok: run: postgresql: (pid 18582) 0s</span><br><span class="line">ok: run: prometheus: (pid 18585) 1s</span><br><span class="line">ok: run: redis: (pid 18603) 0s</span><br><span class="line">ok: run: redis-exporter: (pid 18627) 1s</span><br><span class="line">ok: run: sidekiq: (pid 18635) 0s</span><br><span class="line">ok: run: unicorn: (pid 18646) 0s</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>浏览器访问并登陆</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">http://192.168.122.222</span><br><span class="line">第一次登陆需要修改密码</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>汉化（可选）:<a href="https://gitlab.com/xhang/gitlab" target="_blank" rel="noopener">https://gitlab.com/xhang/gitlab</a></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> </span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ol>
+<ol start="5">
+<li><h3 id="gitlab的命令"><a href="#gitlab的命令" class="headerlink" title="gitlab的命令"></a>gitlab的命令</h3><p>语法：gitlab-ctl command (subcommand)</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Service Management Commands</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>start</td>
+<td>启动所有服务</td>
+</tr>
+<tr>
+<td>stop</td>
+<td>关闭所有服务</td>
+</tr>
+<tr>
+<td>restart</td>
+<td>重启所有服务</td>
+</tr>
+<tr>
+<td>status</td>
+<td>查看所有服务状态</td>
+</tr>
+<tr>
+<td>tail</td>
+<td>查看日志信息</td>
+</tr>
+<tr>
+<td>service-list</td>
+<td>列举所有启动服务</td>
+</tr>
+<tr>
+<td>graceful-kill</td>
+<td>平稳停止一个服务</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>General Commands</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>help</td>
+<td>帮助</td>
+</tr>
+<tr>
+<td>reconfigure</td>
+<td>修改配置文件之后，需要重新加载下</td>
+</tr>
+<tr>
+<td>show-config</td>
+<td>查看所有服务配置文件信息</td>
+</tr>
+<tr>
+<td>uninstall</td>
+<td>卸载这个软件</td>
+</tr>
+<tr>
+<td>cleanse</td>
+<td>删除gitlab数据，重新白手起家</td>
+</tr>
+</tbody></table>
+<h2 id="githu创建静态博客"><a href="#githu创建静态博客" class="headerlink" title="githu创建静态博客"></a>githu创建静态博客</h2><ul>
+<li><p>创建github仓库</p>
+<ul>
+<li><p>仓库名称必须类似：用户名.github.io形式，shinsue.githubio</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 克隆新创建的github仓库到本地</span></span><br><span class="line">root@kvm02 MINGW64 /d/repo</span><br><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">clone</span> https://github.com/shinsue/shinsue.github.io.git</span></span><br><span class="line">Cloning into 'shinsue.github.io'...</span><br><span class="line">warning: You appear to have cloned an empty repository.</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 进入本地目录并创建index.html(必须叫这个名字)文件初始化</span></span><br><span class="line">root@kvm02 MINGW64 /d/repo</span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> shinsue.github.io/</span></span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/shinsue.github.io (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> vim index.html</span></span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/shinsue.github.io (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> cat index.html</span></span><br><span class="line">&lt;h1&gt;这是静态页测试文件&lt;/h1&gt;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 提交并push到github仓库</span></span><br><span class="line">root@kvm02 MINGW64 /d/repo/shinsue.github.io (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git add .</span></span><br><span class="line">warning: LF will be replaced by CRLF in index.html.</span><br><span class="line">The file will have its original line endings in your working directory</span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/shinsue.github.io (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git commit -m <span class="string">"初始化..."</span></span></span><br><span class="line">[master (root-commit) b08c6d8] 初始化...</span><br><span class="line"> 1 file changed, 1 insertion(+)</span><br><span class="line"> create mode 100644 index.html</span><br><span class="line"></span><br><span class="line">root@kvm02 MINGW64 /d/repo/shinsue.github.io (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git push</span></span><br><span class="line">Enumerating objects: 3, done.</span><br><span class="line">Counting objects: 100% (3/3), done.</span><br><span class="line">Writing objects: 100% (3/3), 254 bytes | 254.00 KiB/s, done.</span><br><span class="line">Total 3 (delta 0), reused 0 (delta 0)</span><br><span class="line">To https://github.com/shinsue/shinsue.github.io.git</span><br><span class="line"> * [new branch]      master -&gt; master</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>刷新访问测试：<a href="https://shinsue.github.io/" target="_blank" rel="noopener">https://shinsue.github.io/</a></p>
+</li>
+<li><p>可以根据需求配置css样式等</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="github结合hexo创建静态博客"><a href="#github结合hexo创建静态博客" class="headerlink" title="github结合hexo创建静态博客"></a>github结合hexo创建静态博客</h2><ul>
+<li><p>安装hexo</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\root&gt;npm install hexo-cli -g</span><br><span class="line">C:\Users\root&gt;hexo --version</span><br><span class="line">hexo-cli: 2.0.0</span><br><span class="line">os: Windows_NT 6.1.7601 win32 x64</span><br><span class="line">http_parser: 2.8.0</span><br><span class="line">node: 10.16.0</span><br><span class="line">v8: 6.8.275.32-node.52</span><br><span class="line">uv: 1.28.0</span><br><span class="line">zlib: 1.2.11</span><br><span class="line">brotli: 1.0.7</span><br><span class="line">ares: 1.15.0</span><br><span class="line">modules: 64</span><br><span class="line">nghttp2: 1.34.0</span><br><span class="line">napi: 4</span><br><span class="line">openssl: 1.1.1b</span><br><span class="line">icu: 64.2</span><br><span class="line">unicode: 12.1</span><br><span class="line">cldr: 35.1</span><br><span class="line">tz: 2019a</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用hexo命令初始化blog</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">D:\data&gt;hexo init blog</span><br><span class="line">INFO  Cloning hexo-starter https://github.com/hexojs/hexo-starter.git</span><br><span class="line">Cloning into 'D:\data\blog'...</span><br><span class="line">remote: Enumerating objects: 4, done.</span><br><span class="line">remote: Counting objects: 100% (4/4), done.</span><br><span class="line">remote: Compressing objects: 100% (4/4), done.</span><br><span class="line">remote: Total 81 (delta 0), reused 1 (delta 0), pack-reused 77</span><br><span class="line">Unpacking objects: 100% (81/81), done.</span><br><span class="line">Submodule 'themes/landscape' (https://github.com/hexojs/hexo-theme-landscape.git) registered for pat</span><br><span class="line">h 'themes/landscape'</span><br><span class="line">Cloning into 'D:/data/blog/themes/landscape'...</span><br><span class="line">remote: Enumerating objects: 1018, done.</span><br><span class="line">remote: Total 1018 (delta 0), reused 0 (delta 0), pack-reused 1018</span><br><span class="line">Receiving objects: 100% (1018/1018), 3.20 MiB | 186.00 KiB/s, done.</span><br><span class="line">Resolving deltas: 100% (555/555), done.</span><br><span class="line">Submodule path 'themes/landscape': checked out '73a23c51f8487cfcd7c6deec96ccc7543960d350'</span><br><span class="line">INFO  Install dependencies</span><br><span class="line">npm WARN deprecated core-js@1.2.7: core-js@&lt;2.6.8 is no longer maintained. Please, upgrade to core-j</span><br><span class="line">s@3 or at least to actual version of core-js@2.</span><br><span class="line">npm notice created a lockfile as package-lock.json. You should commit this file.</span><br><span class="line">npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.9 (node_modules\fsevents):</span><br><span class="line">npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.9: wanted &#123;"os":</span><br><span class="line">"darwin","arch":"any"&#125; (current: &#123;"os":"win32","arch":"x64"&#125;)</span><br><span class="line"></span><br><span class="line">added 353 packages from 503 contributors in 46.226s</span><br><span class="line">INFO  Start blogging with Hexo!</span><br><span class="line"></span><br><span class="line">D:\data&gt;cd blog</span><br><span class="line"></span><br><span class="line">D:\data\blog&gt;dir</span><br><span class="line"> 驱动器 D 中的卷没有标签。</span><br><span class="line"> 卷的序列号是 24FD-C029</span><br><span class="line"></span><br><span class="line"> D:\data\blog 的目录</span><br><span class="line"></span><br><span class="line">2019/09/10  08:30    &lt;DIR&gt;          .</span><br><span class="line">2019/09/10  08:30    &lt;DIR&gt;          ..</span><br><span class="line">2019/09/10  08:29                71 .gitignore</span><br><span class="line">2019/09/10  08:30    &lt;DIR&gt;          node_modules</span><br><span class="line">2019/09/10  08:30           117,701 package-lock.json</span><br><span class="line">2019/09/10  08:29               462 package.json</span><br><span class="line">2019/09/10  08:29    &lt;DIR&gt;          scaffolds</span><br><span class="line">2019/09/10  08:29    &lt;DIR&gt;          source</span><br><span class="line">2019/09/10  08:29    &lt;DIR&gt;          themes</span><br><span class="line">2019/09/10  08:29             1,849 _config.yml</span><br><span class="line">               4 个文件        120,083 字节</span><br><span class="line">               6 个目录 60,981,014,528 可用字节</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>启动服务器</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">D:\data\blog&gt;hexo server</span><br><span class="line">INFO  Start processing</span><br><span class="line">INFO  Hexo is running at http://localhost:4000 . Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>编写新文章</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">D:\data\blog&gt;hexo new git入门到精通</span><br><span class="line">INFO  Created: D:\data\blog\source\_posts\git入门到精通.md</span><br></pre></td></tr></table></figure>
+</li>
+<li></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/09/10/git入门到精通/" data-id="ck0d49ah10003y4d5u5ea6j0u" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/09/10/hello-world/" class="article-date">
+  <time datetime="2019-09-10T00:29:28.999Z" itemprop="datePublished">2019-09-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/10/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/09/10/hello-world/" data-id="ck0d3pedc0000y4d5rq9dyq4r" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/09/10/git入门到精通/">git入门到精通</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/10/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
